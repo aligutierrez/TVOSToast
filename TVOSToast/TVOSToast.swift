@@ -29,8 +29,8 @@ public extension NSAttributedString {
 
   public convenience init(text: String, font: UIFont, color: UIColor) {
     let attributes = [
-      NSFontAttributeName: font,
-      NSForegroundColorAttributeName: color
+        NSAttributedString.Key.font: font,
+        NSAttributedString.Key.foregroundColor: color
     ]
     self.init(string: text, attributes: attributes)
   }
@@ -212,7 +212,7 @@ open class TVOSToast: UIView {
     let duration = style.duration ?? 3
     let backgroundColor = style.backgroundColor ?? UIColor.gray
     let cornerRadius = style.cornerRadius ?? 10
-    let font = style.font ?? UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+      let font = style.font ?? UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
     let textColor = style.textColor ?? UIColor.white
 
     // setup style
